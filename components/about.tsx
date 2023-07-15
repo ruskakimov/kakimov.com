@@ -1,10 +1,10 @@
 const About = () => {
   return (
-    <div className="p-4 bg-stone-800 rounded-md shadow-xl">
+    <div className="p-4 bg-stone-800 rounded-2xl shadow-xl ring-1 ring-stone-500">
       <div className="flex flex-row items-center gap-x-6">
         <img
           src="/assets/profile_pic.jpg"
-          className="w-24 aspect-square rounded"
+          className="w-24 aspect-square rounded-xl ring-1 ring-stone-500 shadow-md shadow-black"
           alt="Rustem Kakimov profile picture"
         />
         <div>
