@@ -6,7 +6,7 @@ const Header = () => {
           <div className="flex flex-col sm:flex-row items-start gap-6">
             <img
               src="/assets/profile_pic.jpg"
-              className="w-24 aspect-square rounded-xl ring-1 ring-stone-500 shadow-md shadow-black"
+              className="w-24 aspect-square rounded-xl"
               alt="Rustem Kakimov profile picture"
             />
             <div>
