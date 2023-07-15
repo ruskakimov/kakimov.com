@@ -5,7 +5,7 @@ import Head from "next/head";
 import { CMS_NAME } from "../../lib/constants";
 import markdownToHtml from "../../lib/markdownToHtml";
 import type Post from "../../interfaces/post";
-import DateFormatter from "../../components/date-formatter";
+import DateLabel from "../../components/date-label";
 
 type Props = {
   post: Post;
@@ -30,8 +30,7 @@ export default function PostPage({ post, morePosts }: Props) {
           </Head>
           <h1>{post.title}</h1>
           <div className="max-w-2xl mx-auto">
-            <DateFormatter dateString={post.date} />
-
+            <DateLabel dateString={post.date} />
             <div dangerouslySetInnerHTML={{ __html: post.content }} />
           </div>
         </article>

@@ -1,6 +1,6 @@
 import Link from "next/link";
 import type Post from "../interfaces/post";
-import DateFormatter from "./date-formatter";
+import DateLabel from "./date-label";
 
 type Props = {
   posts: Post[];
@@ -21,9 +21,7 @@ const PostList = ({ posts }: Props) => {
 const PostPreview = ({ title, date, excerpt, slug }: Post) => {
   return (
     <div>
-      <div className="text-sm text-gray-400">
-        <DateFormatter dateString={date} />
-      </div>
+      <DateLabel dateString={date} />
       <h3 className="text-2xl font-bold my-2 leading-snug">
         <Link
           as={`/posts/${slug}`}
