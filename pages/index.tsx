@@ -1,9 +1,8 @@
-import PostList from "../components/post-list";
-import { getAllPosts } from "../lib/api";
 import Head from "next/head";
-import { CMS_NAME } from "../lib/constants";
+import PostList from "../components/post-list";
 import Post from "../interfaces/post";
-import Header from "../components/shell/header";
+import { MAIN_SITE_TITLE } from "../lib/constants";
+import { getAllPosts } from "../lib/api";
 
 type Props = {
   allPosts: Post[];
@@ -13,7 +12,7 @@ export default function Index({ allPosts }: Props) {
   return (
     <>
       <Head>
-        <title>{`Next.js Blog Example with ${CMS_NAME}`}</title>
+        <title>{MAIN_SITE_TITLE}</title>
       </Head>
       <PostList posts={allPosts} />
     </>

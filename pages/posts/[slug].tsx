@@ -2,7 +2,7 @@ import { useRouter } from "next/router";
 import ErrorPage from "next/error";
 import { getPostBySlug, getAllPosts } from "../../lib/api";
 import Head from "next/head";
-import { CMS_NAME } from "../../lib/constants";
+import { MAIN_SITE_TITLE } from "../../lib/constants";
 import markdownToHtml from "../../lib/markdownToHtml";
 import type Post from "../../interfaces/post";
 import DateLabel from "../../components/atomic/date-label";
@@ -14,7 +14,7 @@ type Props = {
 
 export default function PostPage({ post }: Props) {
   const router = useRouter();
-  const title = `${post.title} | Next.js Blog Example with ${CMS_NAME}`;
+  const title = `${post.title} | ${MAIN_SITE_TITLE}`;
   if (!router.isFallback && !post?.slug) {
     return <ErrorPage statusCode={404} />;
   }
