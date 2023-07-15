@@ -28,7 +28,9 @@ export default function PostPage({ post, morePosts }: Props) {
         <meta property="og:image" content={post.ogImage.url} />
       </Head>
       <DateLabel dateString={post.date} />
-      <h1>{post.title}</h1>
+      <h1 className="text-3xl font-bold mt-2 mb-8 leading-snug">
+        {post.title}
+      </h1>
       <div dangerouslySetInnerHTML={{ __html: post.content }} />
     </article>
   );
