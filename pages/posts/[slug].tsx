@@ -5,7 +5,7 @@ import Head from "next/head";
 import { CMS_NAME } from "../../lib/constants";
 import markdownToHtml from "../../lib/markdownToHtml";
 import type Post from "../../interfaces/post";
-import DateLabel from "../../components/date-label";
+import DateLabel from "../../components/atomic/date-label";
 
 type Props = {
   post: Post;

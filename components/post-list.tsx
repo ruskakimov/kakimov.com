@@ -1,6 +1,6 @@
 import Link from "next/link";
 import type Post from "../interfaces/post";
-import DateLabel from "./date-label";
+import DateLabel from "./atomic/date-label";
 
 type Props = {
   posts: Post[];
