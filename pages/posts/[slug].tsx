@@ -18,24 +18,19 @@ export default function PostPage({ post, morePosts }: Props) {
   if (!router.isFallback && !post?.slug) {
     return <ErrorPage statusCode={404} />;
   }
+  if (router.isFallback) {
+    return <h1>Hold on...</h1>;
+  }
   return (
-    <>
-      {router.isFallback ? (
-        <h1>Loading…</h1>
-      ) : (
-        <article className="mb-32">
-          <Head>
-            <title>{title}</title>
-            <meta property="og:image" content={post.ogImage.url} />
-          </Head>
-          <h1>{post.title}</h1>
-          <div className="max-w-2xl mx-auto">
-            <DateLabel dateString={post.date} />
-            <div dangerouslySetInnerHTML={{ __html: post.content }} />
-          </div>
-        </article>
-      )}
-    </>
+    <article className="mb-32">
+      <Head>
+        <title>{title}</title>
+        <meta property="og:image" content={post.ogImage.url} />
+      </Head>
+      <DateLabel dateString={post.date} />
+      <h1>{post.title}</h1>
+      <div dangerouslySetInnerHTML={{ __html: post.content }} />
+    </article>
   );
 }
 
