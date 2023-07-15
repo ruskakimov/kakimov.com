@@ -1,12 +1,20 @@
 const About = () => {
   return (
-    <div className="my-8 p-4 bg-stone-800 rounded-md shadow">
-      {/* <img src={picture} className="w-12 h-12 rounded-full mr-4" alt={name} /> */}
-      <Paragraph>Greetings! 👋</Paragraph>
-      <Paragraph>
-        I'm Rustem Kakimov, a software engineer building interactive
-        experiences.
-      </Paragraph>
+    <div className="my-8 p-4 bg-stone-800 rounded-md shadow-xl">
+      <div className="flex flex-row items-center gap-x-6">
+        <img
+          src="/assets/profile_pic.jpg"
+          className="w-24 aspect-square rounded"
+          alt="Rustem Kakimov profile picture"
+        />
+        <div>
+          <Paragraph>Greetings! 👋</Paragraph>
+          <Paragraph>
+            I'm Rustem Kakimov, a software engineer building interactive
+            experiences.
+          </Paragraph>
+        </div>
+      </div>
     </div>
   );
 };
