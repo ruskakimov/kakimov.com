@@ -22,7 +22,7 @@ export default function PostPage({ post, morePosts }: Props) {
     return <h1>Hold on...</h1>;
   }
   return (
-    <article className="prose lg:prose-xl prose-stone">
+    <article className="prose lg:prose-xl prose-stone prose-p:leading-relaxed">
       <Head>
         <title>{title}</title>
         <meta property="og:image" content={post.ogImage.url} />

@@ -31,7 +31,7 @@ const PostPreview = ({ title, date, excerpt, slug }: Post) => {
           {title}
         </Link>
       </h3>
-      <p className="text-xl text-stone-800">{excerpt}</p>
+      <p className="text-xl text-stone-700 leading-relaxed">{excerpt}</p>
     </div>
   );
 };
