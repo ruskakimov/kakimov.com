@@ -15,7 +15,9 @@ export default function Index({ allPosts }: Props) {
       <Head>
         <title>{`Next.js Blog Example with ${CMS_NAME}`}</title>
       </Head>
-      <About />
+      <div className="mb-16">
+        <About />
+      </div>
       <PostList posts={allPosts} />
     </>
   );
