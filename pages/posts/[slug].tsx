@@ -1,20 +1,18 @@
 import { useRouter } from "next/router";
 import ErrorPage from "next/error";
-import PostBody from "../../components/post-body";
-import PostHeader from "../../components/post-header";
 import { getPostBySlug, getAllPosts } from "../../lib/api";
-import PostTitle from "../../components/post-title";
 import Head from "next/head";
 import { CMS_NAME } from "../../lib/constants";
 import markdownToHtml from "../../lib/markdownToHtml";
-import type PostType from "../../interfaces/post";
+import type Post from "../../interfaces/post";
+import DateFormatter from "../../components/date-formatter";
 
 type Props = {
-  post: PostType;
-  morePosts: PostType[];
+  post: Post;
+  morePosts: Post[];
 };
 
-export default function Post({ post, morePosts }: Props) {
+export default function PostPage({ post, morePosts }: Props) {
   const router = useRouter();
   const title = `${post.title} | Next.js Blog Example with ${CMS_NAME}`;
   if (!router.isFallback && !post?.slug) {
@@ -23,23 +21,20 @@ export default function Post({ post, morePosts }: Props) {
   return (
     <>
       {router.isFallback ? (
-        <PostTitle>Loading…</PostTitle>
+        <h1>Loading…</h1>
       ) : (
-        <>
-          <article className="mb-32">
-            <Head>
-              <title>{title}</title>
-              <meta property="og:image" content={post.ogImage.url} />
-            </Head>
-            <PostHeader
-              title={post.title}
-              coverImage={post.coverImage}
-              date={post.date}
-              author={post.author}
-            />
-            <PostBody content={post.content} />
-          </article>
-        </>
+        <article className="mb-32">
+          <Head>
+            <title>{title}</title>
+            <meta property="og:image" content={post.ogImage.url} />
+          </Head>
+          <h1>{post.title}</h1>
+          <div className="max-w-2xl mx-auto">
+            <DateFormatter dateString={post.date} />
+
+            <div dangerouslySetInnerHTML={{ __html: post.content }} />
+          </div>
+        </article>
       )}
     </>
   );
