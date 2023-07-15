@@ -1,7 +1,7 @@
 const About = () => {
   return (
-    <div className="p-4 bg-stone-800 rounded-2xl shadow-xl ring-1 ring-stone-500">
-      <div className="flex flex-row items-center gap-x-6">
+    <div className="p-4 bg-stone-800 -mx-4 sm:rounded-2xl shadow-xl ring-1 ring-stone-500">
+      <div className="flex flex-col sm:flex-row items-start gap-6">
         <img
           src="/assets/profile_pic.jpg"
           className="w-24 aspect-square rounded-xl ring-1 ring-stone-500 shadow-md shadow-black"
@@ -21,7 +21,7 @@ const About = () => {
 
 const Paragraph = ({ children }: { children: string }) => {
   return (
-    <p className="text-xl text-stone-50 font-medium mb-2 last-of-type:mb-0">
+    <p className="text-base sm:text-xl text-stone-50 font-medium sm:mb-2 last-of-type:mb-0">
       {children}
     </p>
   );
