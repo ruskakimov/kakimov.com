@@ -4,7 +4,8 @@
     "dev": "next",
     "build": "next build",
     "start": "next start",
-    "typecheck": "tsc"
+    "typecheck": "tsc",
+    "favicon": "real-favicon generate faviconDescription.json faviconData.json ./public/favicon && rm faviconData.json"
   },
   "dependencies": {
     "@tailwindcss/typography": "^0.5.9",
