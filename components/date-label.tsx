@@ -7,7 +7,7 @@ type Props = {
 const DateLabel = ({ dateString }: Props) => {
   const date = parseISO(dateString);
   return (
-    <time dateTime={dateString} className="text-sm text-gray-400">
+    <time dateTime={dateString} className="text-sm text-stone-400">
       {format(date, "LLLL	d, yyyy")}
     </time>
   );

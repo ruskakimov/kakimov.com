@@ -26,12 +26,12 @@ const PostPreview = ({ title, date, excerpt, slug }: Post) => {
         <Link
           as={`/posts/${slug}`}
           href="/posts/[slug]"
-          className="underline decoration-gray-400 hover:decoration-red-500"
+          className="underline decoration-stone-300 hover:decoration-red-500"
         >
           {title}
         </Link>
       </h3>
-      <p className="text-xl text-gray-800">{excerpt}</p>
+      <p className="text-xl text-stone-800">{excerpt}</p>
     </div>
   );
 };
