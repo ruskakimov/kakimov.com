@@ -6,6 +6,7 @@ import { CMS_NAME } from "../../lib/constants";
 import markdownToHtml from "../../lib/markdownToHtml";
 import type Post from "../../interfaces/post";
 import DateLabel from "../../components/atomic/date-label";
+import classNames from "classnames";
 
 type Props = {
   post: Post;
@@ -22,7 +23,13 @@ export default function PostPage({ post, morePosts }: Props) {
     return <h1>Hold on...</h1>;
   }
   return (
-    <article className="prose lg:prose-xl prose-stone prose-p:leading-relaxed">
+    <article
+      className={classNames(
+        "prose lg:prose-xl prose-stone",
+        "prose-p:leading-relaxed",
+        "prose-a:decoration-stone-300 hover:prose-a:decoration-red-500"
+      )}
+    >
       <Head>
         <title>{title}</title>
         <meta property="og:image" content={post.ogImage.url} />
