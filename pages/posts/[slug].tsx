@@ -10,10 +10,9 @@ import classNames from "classnames";
 
 type Props = {
   post: Post;
-  morePosts: Post[];
 };
 
-export default function PostPage({ post, morePosts }: Props) {
+export default function PostPage({ post }: Props) {
   const router = useRouter();
   const title = `${post.title} | Next.js Blog Example with ${CMS_NAME}`;
   if (!router.isFallback && !post?.slug) {
