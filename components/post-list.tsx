@@ -33,7 +33,7 @@ const PostPreview = ({ title, date, excerpt, slug }: Post) => {
           {title}
         </Link>
       </h3>
-      <p className="text-lg text-gray-800">{excerpt}</p>
+      <p className="text-xl text-gray-800">{excerpt}</p>
     </div>
   );
 };
