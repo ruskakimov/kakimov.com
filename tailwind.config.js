@@ -3,16 +3,6 @@ module.exports = {
   content: ["./components/**/*.tsx", "./pages/**/*.tsx"],
   theme: {
     extend: {
-      colors: {
-        "accent-1": "#FAFAFA",
-        "accent-2": "#EAEAEA",
-        "accent-7": "#333",
-        success: "#0070f3",
-        cyan: "#79FFE1",
-      },
-      spacing: {
-        28: "7rem",
-      },
       letterSpacing: {
         tighter: "-.04em",
       },
@@ -31,5 +21,5 @@ module.exports = {
       },
     },
   },
-  plugins: [],
+  plugins: [require("@tailwindcss/typography")],
 };
