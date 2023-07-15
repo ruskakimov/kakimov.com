@@ -25,7 +25,11 @@ const PostPreview = ({ title, date, excerpt, slug }: Post) => {
         <DateFormatter dateString={date} />
       </div>
       <h3 className="text-xl font-bold my-2 leading-snug">
-        <Link as={`/posts/${slug}`} href="/posts/[slug]" className="underline">
+        <Link
+          as={`/posts/${slug}`}
+          href="/posts/[slug]"
+          className="underline decoration-gray-400 hover:decoration-red-500"
+        >
           {title}
         </Link>
       </h3>
