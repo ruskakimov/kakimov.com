@@ -1,3 +1,4 @@
+import Header from "./header";
 import Meta from "./meta";
 
 type Props = {
@@ -8,7 +9,8 @@ const Layout = ({ children }: Props) => {
   return (
     <>
       <Meta />
-      <main className="min-h-screen max-w-2xl mx-auto py-24 px-4">
+      <Header />
+      <main className="min-h-screen max-w-xl mx-auto px-4 pb-24">
         {children}
       </main>
     </>
