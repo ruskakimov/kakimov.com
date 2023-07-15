@@ -1,4 +1,4 @@
-import MoreStories from "../components/more-stories";
+import PostList from "../components/post-list";
 import { getAllPosts } from "../lib/api";
 import Head from "next/head";
 import { CMS_NAME } from "../lib/constants";
@@ -14,7 +14,7 @@ export default function Index({ allPosts }: Props) {
       <Head>
         <title>{`Next.js Blog Example with ${CMS_NAME}`}</title>
       </Head>
-      <MoreStories posts={allPosts} />
+      <PostList posts={allPosts} />
     </>
   );
 }
