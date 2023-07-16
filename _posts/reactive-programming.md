@@ -49,3 +49,6 @@ Imperative burger:
 2. Put cheese on top
 3. Put patty on top
 4. Put top bun on top
+
+Perhaps we should write about data fetching in React after all.
+It is a more concrete problem, a solution to which would be immediately useful.
