@@ -12,7 +12,7 @@ const Header = () => {
             <div>
               <Paragraph>Greetings! 👋</Paragraph>
               <Paragraph>
-                I'm Rustem Kakimov, a software engineer building interactive
+                I'm Rustem Kakimov, a software developer building interactive
                 experiences.
               </Paragraph>
             </div>
