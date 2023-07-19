@@ -24,7 +24,7 @@ In React, data fetching typically occurs in the component's lifecycle methods or
 
 ## Fetching Data with `fetch()`
 
-The built-in fetch() function in modern browsers provides a simple yet powerful way to fetch data from APIs. It returns a Promise that resolves to the response of the request. Here's an example of how to use fetch() for data fetching in a React component:
+The built-in `fetch()` function in modern browsers provides a simple yet powerful way to fetch data from APIs. It returns a Promise that resolves to the response of the request. Here's an example of how to use `fetch()` for data fetching in a React component:
 
 ```
 import React, { useEffect, useState } from 'react';
