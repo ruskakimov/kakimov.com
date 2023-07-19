@@ -5,13 +5,6 @@ ogImage:
   url: "/assets/blog/preview/cover.jpg"
 ---
 
-Topics to cover:
-
-- Loading state
-- Error toast
-- Error state
-- Abort fetch
-
 Data fetching is an essential aspect of modern web development, particularly when building dynamic and interactive applications. In React, a popular JavaScript library for building user interfaces, there are several approaches and techniques available for fetching data. In this article, we will explore various methods of data fetching in React, discuss their advantages and use cases, and provide examples to help you understand how to implement them effectively.
 
 ## Table of Contents
@@ -167,6 +160,13 @@ In this example, we use the useQuery hook from React Query to fetch data. The fi
 Data fetching is a crucial aspect of building robust and interactive React applications. In this article, we explored various methods for fetching data in React, including using the built-in fetch() function, Axios for HTTP requests, GraphQL for declarative data querying, and libraries like React Query and SWR for advanced data management.
 
 Remember to consider the specific requirements and complexity of your project when choosing a data fetching approach. Each method has its own strengths and use cases, so pick the one that best fits your application's needs. With these tools and techniques, you'll be well-equipped to handle data fetching in your React projects effectively. Happy coding!
+
+Topics to cover:
+
+- Loading state
+- Error toast
+- Error state
+- Abort fetch
 
 ```
 import * as React from 'react';
