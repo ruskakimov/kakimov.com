@@ -44,6 +44,10 @@ export default function App() {
 }
 ```
 
+Great! We send a request and pass the image URL to `img` element. A new dog photo is displayed each time we refresh the page.
+
+Are we done here? Well, not quite. If you inspect your network traffic with browser developer tools, you might notice that two requests are sent instead of one. Why is that?
+
 Why does effect run twice?
 
 But an empty dependency array means that it will run only on mount.
