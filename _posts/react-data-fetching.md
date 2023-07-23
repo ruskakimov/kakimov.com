@@ -46,7 +46,7 @@ export default function App() {
 
 Great! We send a request and pass the image URL to `img` element. A new dog photo is displayed each time we refresh the page.
 
-Are we done here? Well, not quite. If you inspect your network traffic with your browser's developer tools, you might notice that two requests are sent instead of one. If that's the case, your `index.tsx` probably contains this:
+Are we done here? Well, not quite. You might notice that one dog image is shown that is quickly replaced by another one. And if you inspect network traffic with the browser's developer tools, you might notice that two requests are sent instead of one. If that's the case, your `index.tsx` probably contains this:
 
 ```
 root.render(
@@ -60,6 +60,6 @@ root.render(
 in development mode. It has no effect in production.
 Basically, it's a way of stress testing your app to find bugs before you ship them.
 
-Some of you might be thinking:
+> But our effect would never run twice in production. Let's just remove `StrictMode` to get rid of this weird behavior.
 
-> But our effect would never run twice in production. Aren't we trying to solve a problem brought upon us by `StrictMode`? Let's just remove it.
+I would advice you against that. To prove my point, here are the potential bugs you will face in **production** with the current implementation:
