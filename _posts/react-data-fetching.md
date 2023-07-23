@@ -46,8 +46,20 @@ export default function App() {
 
 Great! We send a request and pass the image URL to `img` element. A new dog photo is displayed each time we refresh the page.
 
-Are we done here? Well, not quite. If you inspect your network traffic with browser developer tools, you might notice that two requests are sent instead of one. Why is that?
+Are we done here? Well, not quite. If you inspect your network traffic with your browser's developer tools, you might notice that two requests are sent instead of one. If that's the case, your `index.tsx` probably contains this:
 
-Why does effect run twice?
+```
+root.render(
+  <StrictMode>
+    <App />
+  </StrictMode>
+);
+```
 
-But an empty dependency array means that it will run only on mount.
+`StrictMode` makes your renders and effects run twice
+in development mode. It has no effect in production.
+Basically, it's a way of stress testing your app to find bugs before you ship them.
+
+Some of you might be thinking:
+
+> But our effect would never run twice in production. Aren't we trying to solve a problem brought upon us by `StrictMode`? Let's just remove it.
