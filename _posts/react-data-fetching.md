@@ -22,7 +22,7 @@ It returns a JSON object that looks like this:
 }
 ```
 
-We want to send a single request when the page loads, which a perfect job for `useEffect` with an empty dependency array.
+We want to send a single request when the page loads, which is a perfect job for `useEffect` with an empty dependency array.
 
 ```
 const RANDOM_DOG_URL = 'https://dog.ceo/api/breeds/image/random';
