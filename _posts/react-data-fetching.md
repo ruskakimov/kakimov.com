@@ -46,7 +46,7 @@ export default function App() {
 
 Great! We send a request and pass the image URL to `img` element. A new dog photo is displayed each time we refresh the page.
 
-Are we done here? Well, not quite. You might notice that one dog image is shown that is quickly replaced by another one. And if you inspect network traffic with the browser's developer tools, you might notice that two requests are sent instead of one. If that's the case, your `index.tsx` probably contains this:
+Are we done here? Well, not quite. You might notice some weird behavior if your internet is slow enough or you've enabled network throttling. An image of a dog is loaded and is quickly replaced by another one. And if you inspect network traffic with the browser's developer tools, you might notice that two requests are sent instead of one. If that's the case, your `index.tsx` probably contains this:
 
 ```
 root.render(
@@ -62,4 +62,4 @@ Basically, it's a way of stress testing your app to find bugs before you ship th
 
 > But our effect would never run twice in production. Let's just remove `StrictMode` to get rid of this weird behavior.
 
-I would advice you against that. To prove my point, here are the potential bugs you will face in **production** with the current implementation:
+I would advice you against that. React app not working as expected with strict mode turned on is an indicator of lack of robustness. To prove my point, here are the potential bugs you will face in **production** with the current implementation:
