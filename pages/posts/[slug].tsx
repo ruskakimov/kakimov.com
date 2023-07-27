@@ -28,7 +28,8 @@ export default function PostPage({ post }: Props) {
         "prose-p:leading-relaxed",
         "prose-a:decoration-stone-300 hover:prose-a:decoration-red-500",
         "prose-pre:bg-white prose-pre:shadow prose-pre:text-stone-900 prose-pre:text-base",
-        "prose-code:text-sm prose-code:font-normal"
+        "prose-code:text-sm prose-code:font-normal",
+        "prose-blockquote:text-stone-500"
       )}
     >
       <Head>
