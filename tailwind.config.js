@@ -19,6 +19,26 @@ module.exports = {
         sm: "0 5px 10px rgba(0, 0, 0, 0.12)",
         md: "0 8px 30px rgba(0, 0, 0, 0.12)",
       },
+      typography: (theme) => ({
+        DEFAULT: {
+          css: {
+            "code::before": {
+              display: "none",
+            },
+            "code::after": {
+              display: "none",
+            },
+            code: {
+              backgroundColor: theme("colors.stone.200"),
+              borderRadius: theme("borderRadius.DEFAULT"),
+              paddingLeft: theme("spacing[1.5]"),
+              paddingRight: theme("spacing[1.5]"),
+              paddingTop: theme("spacing.1"),
+              paddingBottom: theme("spacing.1"),
+            },
+          },
+        },
+      }),
     },
   },
   plugins: [require("@tailwindcss/typography")],
