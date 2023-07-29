@@ -15,7 +15,7 @@ https://dog.ceo/api/breeds/image/random
 
 It returns a JSON object that looks like this:
 
-```JSON
+```json
 {
   "message": "https://images.dog.ceo/breeds/spaniel-welsh/n02102177_2148.jpg",
   "status": "success"
@@ -24,7 +24,7 @@ It returns a JSON object that looks like this:
 
 We want to send a single request when the page loads, which is a perfect job for `useEffect` with an empty dependency array.
 
-```TSX
+```tsx
 const RANDOM_DOG_URL = "https://dog.ceo/api/breeds/image/random";
 
 export default function App() {
@@ -48,7 +48,7 @@ Great! We send a request and pass the image URL to `img` element. A new dog phot
 
 Are we done here? Well, not quite. You might notice some weird behavior if your internet is slow enough or you've enabled network throttling. An image of a dog is loaded and is quickly replaced by another one. And if you inspect network traffic with the browser's developer tools, you might notice that two requests are sent instead of one. If that's the case, your `index.tsx` probably contains this:
 
-```TSX
+```tsx
 root.render(
   <StrictMode>
     <App />
