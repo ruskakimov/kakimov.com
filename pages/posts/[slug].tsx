@@ -25,6 +25,7 @@ export default function PostPage({ post }: Props) {
     <article
       className={classNames(
         "prose sm:prose-xl prose-stone",
+        "prose-h1:tracking-tight",
         "prose-p:leading-relaxed",
         "prose-a:decoration-stone-300 hover:prose-a:decoration-red-500",
         "prose-pre:bg-white prose-pre:shadow prose-pre:text-stone-900 prose-pre:text-base",
