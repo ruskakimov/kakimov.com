@@ -1,5 +1,5 @@
 import Head from "next/head";
-import { MAIN_SITE_TITLE } from "../../lib/constants";
+import { HOME_TITLE } from "../../lib/constants";
 
 const Meta = () => {
   return (
@@ -32,7 +32,7 @@ const Meta = () => {
       <meta name="msapplication-config" content="/favicon/browserconfig.xml" />
       <meta name="theme-color" content="#000" />
       <link rel="alternate" type="application/rss+xml" href="/feed.xml" />
-      <meta name="description" content={MAIN_SITE_TITLE} />
+      <meta name="description" content={HOME_TITLE} />
       <meta property="og:image" content="/assets/profile_pic.jpg" />
     </Head>
   );
