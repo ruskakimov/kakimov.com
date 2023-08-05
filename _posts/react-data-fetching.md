@@ -48,7 +48,7 @@ At first glance everything is taken care of:
 - ✅ Cancel the request on component unmount
 
 But if you run the app with `StrictMode` enabled,
-you can notice that the component renders `<img src={null} />` before the image URL is fetched.
+you can notice that the component renders `<img src={null} />` before request completes.
 
 On the other hand, the component works as expected without the `StrictMode`.
 This means that the bug only occurs if multiple effects run back-to-back.
