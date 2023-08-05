@@ -6,6 +6,6 @@ body {
   background-color: #f8f8f8;
 }
 
-p > code {
+:not(pre) > code {
   @apply bg-white shadow rounded px-1.5 py-1 before:hidden after:hidden;
 }
