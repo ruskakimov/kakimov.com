@@ -43,9 +43,15 @@ function BadComponent() {
 At first glance everything is taken care of:
 
 - ✅ Show loading state while the request is pending
-- ✅ Show image element if the request succeeds
-- ✅ Show error message if the request fails
+- ✅ Show data on success (an image in this case)
+- ✅ Show error message on failure
 - ✅ Cancel the request on component unmount
+
+But if you run the app with `StrictMode` enabled,
+you can notice that the component renders `<img src={null} />` before the image URL is fetched.
+
+On the other hand, the component works as expected without the `StrictMode`.
+This means that the bug only occurs if multiple effects run back-to-back.
 
 <!--
 Add finally, it will run after clean up function.
