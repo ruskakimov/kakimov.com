@@ -103,6 +103,8 @@ There a couple of ways to fix our code, but first let's start with...
 
 ### The wrong solution
 
+You might be tempted to delay the second effect's initial state update:
+
 ```jsx
 useEffect(() => {
   const controller = new AbortController();
@@ -116,6 +118,12 @@ useEffect(() => {
   /* ... */
 }, []);
 ```
+
+> Note, `queueMicrotask` would not change the order, as it would append to the end of the microtask queue, and our callbacks from the first effect are already there by that point.
+
+This feels wrong, but it does the job.
+The state updates now run in the right order.
+But we have inadvertently introduced a whole other host of problems.
 
 ### The right solution (1)
 
