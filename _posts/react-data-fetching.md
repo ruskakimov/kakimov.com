@@ -84,7 +84,7 @@ Callback passed to `.finally` will still execute, since we don't want to continu
 loading state after the request had failed.
 
 The problem is that the above code won't be called synchronously after the effect clean up.
-Instead they will be added to the [microtask queue](https://javascript.info/microtask-queue).
+Instead these callbacks will be added to the [microtask queue](https://javascript.info/microtask-queue).
 Thus this code will execute **AFTER** the second effect.
 
 Hence this is the lifecycle of our `loading` state:
