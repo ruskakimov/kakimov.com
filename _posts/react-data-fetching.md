@@ -57,7 +57,7 @@ as expected without it. This should tell us that the bug has something to do
 with multiple effects running back-to-back, as `StrictMode` will run the effects twice.
 And it does that for the exact purpose of discovering such bugs.
 
-## Why does it happen?
+## How does it happen?
 
 So, this is what happens:
 
@@ -96,7 +96,7 @@ Hence this is the lifecycle of our `loading` state:
 ## The solution(s)
 
 Why did we want to `setLoading(false)` in the first place?
-To stop rendering loading indicator when request fails.
+To stop rendering the loading indicator when our request fails.
 This is an intentional behavior and we want to preserve it.
 
 There a couple of ways to fix our code, but first let's start with...
