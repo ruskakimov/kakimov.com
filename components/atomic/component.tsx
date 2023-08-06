@@ -55,9 +55,9 @@ function FixedComponent() {
         setError(e.name);
       })
       .finally(() => {
-        // if (!controller.signal.aborted) {
-        setLoading(false);
-        // }
+        if (!controller.signal.aborted) {
+          setLoading(false);
+        }
       });
 
     return () => controller.abort();
