@@ -127,7 +127,13 @@ useEffect(() => {
 > Note, `queueMicrotask` would not change the order, as it would append to the end of the microtask queue, and our callbacks from the first effect are already there by that point.
 
 This feels wrong, but it does the job.
-The state updates now run in the right order.
+The second effect's state updates are no longer intermingled with the first effect's updates:
+
+1. First effect's `setLoading(false)`.
+2. First effect's `setLoading(true)`.
+3. Second effect's `setLoading(true)`.
+4. Second effect's `setLoading(false)`.
+
 But we have inadvertently introduced another problem.
 
 Let's say we decided to cache requests,
