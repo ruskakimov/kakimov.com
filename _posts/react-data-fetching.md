@@ -5,8 +5,6 @@ ogImage:
   url: "/assets/blog/preview/cover.jpg"
 ---
 
-## A subtle bug
-
 If you ever had to fetch data in React without importing an additional dependency,
 you probably have written something similar to this:
 
