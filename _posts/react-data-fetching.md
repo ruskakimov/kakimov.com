@@ -108,6 +108,7 @@ You might be tempted to delay the second effect's initial state update:
 useEffect(() => {
   const controller = new AbortController();
 
+  // Wrap state update in a scheduled macrotask.
   setTimeout(() => {
     setImageUrl(null);
     setLoading(true);
@@ -120,7 +121,7 @@ useEffect(() => {
 
 > Note, `queueMicrotask` would not change the order, as it would append to the end of the microtask queue, and our callbacks from the first effect are already there by that point.
 
-This feels wrong, but it does the job.
+This feels icky, but it does the job.
 The second effect's state updates are no longer intermingled with the first effect's updates:
 
 1. First effect's `setLoading(false)`.
