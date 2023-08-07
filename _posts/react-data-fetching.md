@@ -1,5 +1,5 @@
 ---
-title: "Fetching dogs in React"
+title: "A sneaky pitfall when fetching data in React with Effects"
 date: "2023-07-16T16:09:19.545Z"
 ogImage:
   url: "/assets/blog/preview/cover.jpg"
