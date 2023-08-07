@@ -66,3 +66,13 @@ function FixedComponent() {
   if (error) return <h1 style={{ color: "red" }}>{error}</h1>;
   return <div>{loading ? <h1>Loading...</h1> : <img src={imageUrl} />}</div>;
 }
+
+const cache = {};
+
+async function cachedFetch(resource, options) {
+  const key = resource.toString();
+  if (!cache.hasOwnProperty(key)) {
+    cache[key] = await fetch(resource, options);
+  }
+  return cache[key];
+}

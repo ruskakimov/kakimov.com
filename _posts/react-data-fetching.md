@@ -89,14 +89,19 @@ Thus this code will execute **AFTER** the second effect.
 
 Hence this is the lifecycle of our `loading` state:
 
-1. First effect: `setLoading(true)`.
-2. Second effect: `setLoading(true)`.
-3. First effect: `setLoading(false)`. _Mamma mia! 🤌_
+1. First effect's `setLoading(true)`.
+2. Second effect's `setLoading(true)`.
+3. First effect's `setLoading(false)`. _Mamma mia! 🤌_
+4. Second effect's `setLoading(false)`.
+
+After the third step our state is `loading: false` and `imageUrl: null`,
+as the second request hasn't completed yet.
+That's the reason we don't see the loading indicator.
 
 ## The solution(s)
 
 Why did we want to `setLoading(false)` in the first place?
-To stop rendering the loading indicator when our request fails.
+To stop rendering the loading indicator whether our request succeeds or fails.
 This is an intentional behavior and we want to preserve it.
 
 There a couple of ways to fix our code, but first let's start with...
@@ -123,7 +128,34 @@ useEffect(() => {
 
 This feels wrong, but it does the job.
 The state updates now run in the right order.
-But we have inadvertently introduced a whole other host of problems.
+But we have inadvertently introduced another problem.
+
+Let's say we decided to cache requests,
+so we created a wrapper around fetch that takes care of it:
+
+```jsx
+const cache = {};
+
+async function cachedFetch(resource, options) {
+  const key = resource.toString();
+  if (!cache.hasOwnProperty(key)) {
+    cache[key] = await fetch(resource, options);
+  }
+  return cache[key];
+}
+```
+
+Now, if the component would render and the request turns out to be cached,
+then all of our scheduled microtasks would execute before the next macrotask,
+as that's how [JS event loop](https://javascript.info/event-loop#summary) works.
+And since `setTimeout` schedules a macrotask, the order will become the following:
+
+1. First effect's `setLoading(false)`.
+2. Second effect's `setLoading(false)`.
+3. First effect's `setLoading(true)`.
+4. Second effect's `setLoading(true)`.
+
+Meet the never ending loading indicator.
 
 ### The right solution (1)
 
