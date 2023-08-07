@@ -1,6 +1,7 @@
 ---
 title: "A sneaky pitfall when fetching data in React with Effects"
 date: "2023-08-07T18:56:56.373Z"
+excerpt: "Fetching data in React using its built-in effects might initially seem simple and straightforward. However, this simplicity can quickly unravel when you encounter issues with the sequence of state updates and decide to get a bit more inventive..."
 ---
 
 If you ever had to fetch data in React without importing an additional dependency,
