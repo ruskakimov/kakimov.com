@@ -163,6 +163,15 @@ Meet the never ending loading indicator.
 
 ### The right solution (1)
 
+You can realize that setting state after the request has been canceled is actually pointless.
+The effect is only cleaned up if component has unmounted or another effect will run.
+In either of those cases mutating state isn't useful.
+If there is another effect queued up, then it will be the one responsible for state updates.
+And if our component has unmounted, well, then it isn't rendered.
+
+The solution is to simply check if the request has been canceled
+and prevent state updates in this scenario:
+
 ```jsx
 .finally(() => {
   if (!controller.signal.aborted) {
@@ -171,25 +180,29 @@ Meet the never ending loading indicator.
 });
 ```
 
+As a result we got rid of the first effect's `setLoading(false)` without losing any useful behavior.
+The loading state lifecycle is now in the right order:
+
+1. First effect's `setLoading(true)`.
+2. Second effect's `setLoading(true)`.
+3. Second effect's `setLoading(false)`.
+
 ### The right solution (2)
+
+If we were to include the `setLoading(false)` call in both `.then` and `.catch`
+callbacks, then we wouldn't have encountered this bug in the first place.
 
 ```jsx
 .then((json) => {
   setImageUrl(json.message);
-  setLoading(false);
+  setLoading(false); // Here
 })
 .catch((e) => {
   if (e.name === "AbortError") return;
   setError(e.name);
-  setLoading(false);
+  setLoading(false); // And here
 });
 ```
 
-<!--
-Add finally, it will run after clean up function.
-It will run after the next hooks setState. -> Chaos ensues.
-Let's play a game of delaying -> setTimeout
-cached request -> Chaos ensues!
-It's a trap!
-
-Lesson: Don't call setState after cleanup function. -->
+Catch callback is the only code that can potentially run after the cleanup
+and since it already checks for `AbortError`, we are safe.
