@@ -35,7 +35,6 @@ export default function PostPage({ post }: Props) {
     >
       <Head>
         <title>{title}</title>
-        <meta property="og:image" content={post.ogImage.url} />
       </Head>
       <DateLabel dateString={post.date} />
       <h1>{post.title}</h1>

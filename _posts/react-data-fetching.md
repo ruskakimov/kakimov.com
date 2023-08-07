@@ -1,8 +1,6 @@
 ---
 title: "A sneaky pitfall when fetching data in React with Effects"
 date: "2023-08-07T18:56:56.373Z"
-ogImage:
-  url: "/assets/blog/preview/cover.jpg"
 ---
 
 If you ever had to fetch data in React without importing an additional dependency,
