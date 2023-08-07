@@ -38,6 +38,8 @@ function BadComponent() {
 }
 ```
 
+Can you spot the bug? If not, then continue reading.
+
 At first glance everything is taken care of:
 
 - Show loading state while the request is pending.
