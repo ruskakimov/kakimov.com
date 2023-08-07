@@ -203,3 +203,5 @@ callbacks, then we wouldn't have encountered this bug in the first place.
 
 Catch callback is the only code that can potentially run after the cleanup
 and since it already checks for `AbortError`, we are safe.
+
+I suppose the lesson is to remember **NOT** to mutate state after the effect has been cleaned up.
