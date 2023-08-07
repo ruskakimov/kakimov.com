@@ -98,10 +98,6 @@ That's the reason we don't see the loading indicator.
 
 ## The solution(s)
 
-Why did we want to `setLoading(false)` in the first place?
-To stop rendering the loading indicator whether our request succeeds or fails.
-This is an intentional behavior and we want to preserve it.
-
 There a couple of ways to fix our code, but first let's start with...
 
 ### The wrong solution
