@@ -1,6 +1,6 @@
 ---
 title: "A sneaky pitfall when fetching data in React with Effects"
-date: "2023-07-16T16:09:19.545Z"
+date: "2023-08-07T18:56:56.373Z"
 ogImage:
   url: "/assets/blog/preview/cover.jpg"
 ---
