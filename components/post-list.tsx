@@ -24,8 +24,8 @@ const PostPreview = ({ title, date, excerpt, slug }: Post) => {
       <DateLabel dateString={date} />
       <h3 className="text-2xl font-bold my-2 leading-snug">
         <Link
-          as={`/posts/${slug}`}
-          href="/posts/[slug]"
+          as={`/blog/${slug}`}
+          href="/blog/[slug]"
           className="underline decoration-stone-300 hover:decoration-red-500"
         >
           {title}
