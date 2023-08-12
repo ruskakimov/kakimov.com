@@ -22,15 +22,13 @@ const PostPreview = ({ title, date, excerpt, slug }: Post) => {
   return (
     <div>
       <DateLabel dateString={date} />
-      <h3 className="text-2xl font-bold my-2 leading-snug">
-        <Link
-          as={`/blog/${slug}`}
-          href="/blog/[slug]"
-          className="underline decoration-stone-300 hover:decoration-red-500"
-        >
-          {title}
-        </Link>
-      </h3>
+      <Link
+        as={`/blog/${slug}`}
+        href="/blog/[slug]"
+        className="underline decoration-stone-300 hover:decoration-red-500"
+      >
+        <h3 className="text-2xl font-bold my-2 leading-snug">{title}</h3>
+      </Link>
       <p className="text-lg text-stone-700 leading-relaxed">{excerpt}</p>
     </div>
   );
