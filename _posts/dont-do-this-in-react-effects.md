@@ -1,7 +1,7 @@
 ---
-title: "Shooting your foot in React with Effects"
+title: "Don't do this in React Effects"
 date: "2023-08-07T18:56:56.373Z"
-excerpt: "Undestanding and fixing a subtle bug."
+excerpt: "Understanding and fixing a subtle bug."
 ---
 
 If you ever had to fetch data in React without importing an additional dependency,
