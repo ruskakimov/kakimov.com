@@ -1,7 +1,7 @@
 ---
 title: "Shooting your foot in React with Effects"
 date: "2023-08-07T18:56:56.373Z"
-excerpt: "A cautinary tale about DIY data fetching in React."
+excerpt: "Undestanding and fixing a subtle bug."
 ---
 
 If you ever had to fetch data in React without importing an additional dependency,
