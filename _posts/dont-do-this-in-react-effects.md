@@ -1,5 +1,5 @@
 ---
-title: "Don't do this in React Effects"
+title: "Don't Do This in React Effects"
 date: "2023-08-07T18:56:56.373Z"
 excerpt: "Understanding and fixing a subtle bug."
 ---
