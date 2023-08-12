@@ -9,7 +9,9 @@ const Header = () => {
         />
         <div className="flex flex-col gap-0">
           <span className="text-lg font-semibold">Blog by Rustem Kakimov.</span>
-          <span>A software developer building interactive experiences.</span>
+          <span className="leading-snug">
+            A software developer building interactive experiences.
+          </span>
         </div>
       </div>
     </header>
