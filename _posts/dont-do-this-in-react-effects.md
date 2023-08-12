@@ -4,8 +4,8 @@ date: "2023-08-07T18:56:56.373Z"
 excerpt: "Understanding and fixing a subtle bug."
 ---
 
-If you ever had to fetch data in React without importing an additional dependency,
-you probably have written something similar to this:
+If you've ever had to fetch data in React without importing an additional dependency,
+you've probably written something similar to this:
 
 ```tsx
 function BadComponent() {
@@ -82,7 +82,7 @@ If the request is still pending, the promise will be rejected and catch will ign
 Callback passed to `.finally` will still execute, since we don't want to continue showing
 loading state after the request had failed.
 
-The problem is that the above code won't be called synchronously after the effect clean up.
+However, the issue is that the above code won't be executed synchronously after the effect cleanup.
 Instead these callbacks will be added to the [microtask queue](https://javascript.info/microtask-queue).
 Thus this code will execute **AFTER** the second effect.
 
@@ -187,8 +187,8 @@ The loading state lifecycle is now in the right order:
 
 ### The right solution (2)
 
-If we were to include the `setLoading(false)` call in both `.then` and `.catch`
-callbacks, then we wouldn't have encountered this bug in the first place.
+Had we included the `setLoading(false)` call in both `.then` and `.catch`
+callbacks, we would have avoided this bug altogether.
 
 ```jsx
 .then((json) => {
