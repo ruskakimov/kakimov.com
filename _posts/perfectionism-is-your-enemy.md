@@ -4,16 +4,21 @@ date: "2024-04-28T22:50:23.081Z"
 excerpt: "One of the things I struggle with."
 ---
 
-Perfect work is hard to achieve or even imagine.
-If that's the case, then we should do it "tomorrow" when we are more "ready".
-But then tomorrow comes and we are not any more "ready" than we were yesterday.
+Perfection is hard to imagine, yet we try anyway.
+We try ideas in our head, settle on something that looks like it could be "it"...
+
+But then we always find a flaw, a reason it could fail.
+So we discard it and continue our search for the holy grail.
 
 This cycle perpetuates until we:
 
 1. 🪦 die
-2. 😖 give up on the idea
+2. 😖 give up on the initiative entirely
 3. 👍 curb our perfectionism
 
-Let go of the perfectionistic mindset and start producing something crappy.
-Everything done for the first time is going to be crappy.
-But that's okay. That's just a stepping stone to something greater.
+Letting go of the perfectionistic mindset allows us to start doing.
+Doing something crappy...
+But everything done for the first time is going to be crappy.
+And that's okay. We won't stop here. That's just a stepping stone to something greater.
+
+Don't just sit in your head. Start throwing things at the wall and see what sticks.
