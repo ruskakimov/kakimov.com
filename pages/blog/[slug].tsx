@@ -1,12 +1,12 @@
-import { useRouter } from "next/router";
+import classNames from "classnames";
 import ErrorPage from "next/error";
-import { getPostBySlug, getAllPosts } from "../../lib/api";
 import Head from "next/head";
+import { useRouter } from "next/router";
+import DateLabel from "../../components/atomic/date-label";
+import type Post from "../../interfaces/post";
+import { getAllPosts, getPostBySlug } from "../../lib/api";
 import { FULL_NAME } from "../../lib/constants";
 import markdownToHtml from "../../lib/markdownToHtml";
-import type Post from "../../interfaces/post";
-import DateLabel from "../../components/atomic/date-label";
-import classNames from "classnames";
 
 type Props = {
   post: Post;
@@ -35,9 +35,13 @@ export default function PostPage({ post }: Props) {
     >
       <Head>
         <title>{title}</title>
+        {post.coverImage && (
+          <meta property="og:image" content={post.coverImage} />
+        )}
       </Head>
       <DateLabel dateString={post.date} />
       <h1>{post.title}</h1>
+      {post.coverImage && <img src={post.coverImage} />}
       <article dangerouslySetInnerHTML={{ __html: post.content }} />
     </article>
   );

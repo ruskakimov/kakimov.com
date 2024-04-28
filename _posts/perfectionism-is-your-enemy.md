@@ -2,6 +2,7 @@
 title: "Perfectionism is your enemy"
 date: "2024-04-28T22:50:23.081Z"
 excerpt: "One of the things I struggle with."
+coverImage: "/posts/perfect-pug.jpg"
 ---
 
 Perfection is hard to imagine, yet we try anyway.
