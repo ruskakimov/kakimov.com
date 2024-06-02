@@ -14,7 +14,9 @@ const Header = () => {
             <span className="text-lg font-semibold">
               Blog by Rustem Kakimov.
             </span>
-            <span className="leading-snug">A software developer.</span>
+            <span className="leading-snug">
+              A software developer and hobbyist athlete.
+            </span>
           </div>
         </div>
       </Link>
